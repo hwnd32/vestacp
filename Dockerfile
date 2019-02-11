@@ -1,5 +1,5 @@
 FROM niiknow/docker-hostingbase:1.3.0
-LABEL maintainer="noogen <friends@niiknow.org>"
+LABEL maintainer="KV <hwnd32@yandex.ru>"
 ENV DEBIAN_FRONTEND=noninteractive \
     VESTA=/usr/local/vesta \
     GOLANG_VERSION=1.11.2 \
@@ -95,10 +95,10 @@ RUN cd /tmp \
 
 # begin install vesta
     && bash /tmp/vst-install-ubuntu.sh \
-        --nginx yes --apache yes --phpfpm no \
+        --nginx yes --apache no --phpfpm yes \
         --vsftpd no --proftpd no \
-        --named yes --exim yes --dovecot yes \
-        --spamassassin yes --clamav yes \
+        --named yes --exim no --dovecot no \
+        --spamassassin no --clamav no \
         --iptables yes --fail2ban yes \
         --mysql yes --postgresql yes --remi yes \
         --quota no --password MakeItSo18 \
